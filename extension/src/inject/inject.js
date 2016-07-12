@@ -13,10 +13,10 @@ chrome.extension.sendMessage({}, function(response) {
 				var widget = document.createElement('iframe');
 				var widgetSource = 'https://platform.harvestapp.com/platform/timer';
 				var projectName = document.getElementById('project-name-val').text;
+				var itemID = document.querySelectorAll('a.issue-link')[0].dataset.issueKey;
 				var settings = {
 					app_name: 'Harvest Integration for ' + projectName,
-					external_item_id: document.URL.match(
-						/\/browse\/([A-Z]{2,3}\-[0-9]{1,4})/)[1],
+					external_item_id: itemID,
 					external_item_name: document.title,
 					permalink: document.URL,
 					closable: false,
