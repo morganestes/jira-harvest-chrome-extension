@@ -1,0 +1,25 @@
+{
+	"name": "Harvest Widget for JIRA",
+	"version": "0.1.0",
+	"manifest_version": 2,
+	"description": "Adds a Harvest widget to JIRA issue pages.",
+	"homepage_url": "http://extensionizr.com",
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"default_locale": "en",
+	"permissions": [
+		"contentSettings",
+		"http://example.com"
+	],
+	"content_scripts": [{
+		"matches": [
+			"http://jira.example.com/browse/*"
+		],
+		"js": [
+			"src/inject/inject.js"
+		]
+	}]
+}
